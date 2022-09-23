@@ -1,9 +1,11 @@
 //import components
-
+import PortfolioContainer from "./PortfolioContainer";
 
 function App () {
-    return (<div>
-        <h1>Lets get started..</h1>
+    
+    return (
+    <div>
+        <PortfolioContainer/>
     </div>
     )
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Nav from "./Nav";
 import About from "./components/About";
+import Contact from "./components/Contact";
 
 export default function PortfolioContainer(){
     const [currentPage, setCurrentPage] = useState('About')
@@ -8,6 +9,9 @@ export default function PortfolioContainer(){
     const renderPage = () => {
         if (currentPage === 'About'){
             return <About/>
+        }
+        if (currentPage === 'Contact'){
+            return <Contact/>
         }
     }
 

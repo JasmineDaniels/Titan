@@ -35,13 +35,11 @@ export default function Nav ({ currentPage, handlePageChange }){
                         </li>
 
                         <li className="nav-item ">
-                            <a href="/" className="nav-link disabled">Contact</a>
+                            <a href="#Contact" 
+                            className={currentPage === 'Contact' ? "nav-link active" : "nav-link"}
+                            onClick={() => handlePageChange('Contact')}>Contact</a>
                         </li>
                     </ul>
-                    {/* <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
-                        <button className="btn btn-outline-success" type="submit">Search</button>
-                    </form> */}
                 </div>
             </div>
         </nav>

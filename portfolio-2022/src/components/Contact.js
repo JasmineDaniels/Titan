@@ -1,7 +1,11 @@
 import React, { useState } from "react"
 import '../css/contact.css'
 import { validateEmail } from '../utils/helpers'
-//import Modal from "./Modal";
+import axios from 'axios'
+
+import gmail from '../images/gmlogo.png'
+import gh from '../images/GH1.png'
+import linkedIn from '../images/linkedin1.png'
 
 export default function Contact(){
     const [name, setName] = useState('');
@@ -39,28 +43,38 @@ export default function Contact(){
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-
-        if (!name || !email){
-            alert('Name and Email are required');
-            return;
+        try {
+            if (!name || !email){
+                alert('Name and Email are required');
+                return;
+            }
+    
+            const checkEmail = validateEmail(email)
+            if (!checkEmail ){
+                alert('Please enter a valid Email')
+                return;
+            } 
+    
+            console.log(name)
+            console.log(email)
+            console.log(phone)
+            console.log(message)
+            //send form node mailer or form submit
+            await axios.post('http://localhost:3001/api/contact', {
+                name: name, 
+                email: email, 
+                phone: phone,
+                message: message
+            })
+            //if successul submitted === true then renderModal
+            // setName('')
+            // setPhone('')
+            // setEmail('')
+            // setMessage('')
+        } catch (error) {
+            console.log(error)
         }
-
-        const checkEmail = validateEmail(email)
-        if (!checkEmail ){
-            alert('Please enter a valid Email')
-            return;
-        } 
-
-        //send form node mailer or form submit
-        console.log(name)
-        console.log(email)
-        console.log(phone)
-        console.log(message)
-        //if successul submitted === true then renderModal
-        // setName('')
-        // setPhone('')
-        // setEmail('')
-        // setMessage('')
+        
     }
 
 
@@ -73,17 +87,17 @@ export default function Contact(){
                     <h4 className="mx-3 links" >Links</h4>
                     <div className="contact-image">
                         <a href="mailto:create.jasminedaniels@gmail.com"> 
-                            <img src="./images/gmlogo.png" alt="gmail thumbnail" className="contact-img"></img>
+                            <img src={gmail} alt="gmail thumbnail" className="contact-img"></img>
                         </a>  
                     </div>
                     <div className="contact-image">
                         <a href="https://github.com/JasmineDaniels" target="_blank" rel="noopener noreferrer"> 
-                            <img src="./images/GH1.png" alt="gitHub thumbnail" className="contact-img"></img>
+                            <img src={gh} alt="gitHub thumbnail" className="contact-img"></img>
                         </a>  
                     </div>
                     <div className="contact-image mt-2">
                         <a href="https://www.linkedin.com/in/jasmine-daniels-3a15a1235/" target="_blank" rel="noopener noreferrer"> 
-                            <img src="./images/linkedin1.png" alt="linkedIn thumbnail" className="contact-img"></img>
+                            <img src={linkedIn} alt="linkedIn thumbnail" className="contact-img"></img>
                         </a>  
                     </div>
                 </div>
@@ -151,5 +165,6 @@ export default function Contact(){
             </div>
 
         </section>
+        
     )
 }

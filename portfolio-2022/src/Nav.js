@@ -20,18 +20,20 @@ export default function Nav ({ currentPage, handlePageChange }){
                             <a className="nav-link" href="/">Skills</a>
                         </li>
 
-                        <li className="nav-item dropdown mx-3">
-                            <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <li className="nav-item mx-3">
+                            <a className={currentPage === 'Projects' ? "nav-link active" : "nav-link"} href="#Projects"  aria-current="false"
+                            onClick={() => handlePageChange('Projects')}>Projects</a>
+                            {/* <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Projects
-                            </a>
-                            <ul className="dropdown-menu">
+                            </a> */}
+                            {/* <ul className="dropdown-menu">
                                 <li><a className="dropdown-item" href="/">Project 1</a></li>
                                 <li><a className="dropdown-item" href="/">Project 2</a></li>
                                 <li><a className="dropdown-item" href="/">Project 3</a></li>
                                 <li><a className="dropdown-item" href="/">Project 4</a></li>
                                 <li><a className="dropdown-item" href="/">Project 5</a></li>
                                 <li><a className="dropdown-item" href="/">Project 6</a></li>
-                            </ul>
+                            </ul> */}
                         </li>
 
                         <li className="nav-item ">

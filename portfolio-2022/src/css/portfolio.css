@@ -1,0 +1,6 @@
+.bg-img {
+    
+    background-image: url("../images/${portfolios.img}");
+    width: '30rem',
+    
+}

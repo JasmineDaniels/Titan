@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer'
-
+//import dotenv from "dotenv"
 const Send = (options) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -20,14 +20,14 @@ const Send = (options) => {
 }
 
 
-export default function Email (name, phone, email, message){
+export default function Email ({name, phone, email, message}){
     const styles = {
         fontColor: `hotpink`
     }
 
     let options = {
         from: process.env.EMAIL,
-        to: [`${process.env.EMAIL}, ${props.email}`],
+        to: [`${process.env.EMAIL}, ${email}`],
         subject: 'Thank you so much for your Interest!',
         html: `<div>
             <h2>Hi there, ${name}</h2>

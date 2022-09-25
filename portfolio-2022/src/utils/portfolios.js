@@ -1,5 +1,5 @@
 const portfolios = [
-    {
+    {   
         title: 'Tech Hub',
         img: '',
         description: 'Tech Hub is a social blog style Express application geared toward the tech community, to openly discuss all things Tech!',
@@ -8,7 +8,7 @@ const portfolios = [
     },
     {
         title: 'Tech Hub',
-        img: '',
+        img: 'GH1.png',
         description: 'Tech Hub is a social blog style Express application geared toward the tech community, to openly discuss all things Tech!',
         site: 'https://lionsgatetech.herokuapp.com/',
         repo: 'https://github.com/JasmineDaniels/LionsGateTech'

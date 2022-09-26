@@ -26,6 +26,10 @@ app.get('/ping', (req, res) => {
     res.json({message: `PONG`})
 })
 
+app.get('/', (req, res) => {
+    res.download('./2022_Resume.png')
+})
+
 app.post('/api/contact',(req, res) => {
     try {
         const { name, email, phone, message } = req.body;

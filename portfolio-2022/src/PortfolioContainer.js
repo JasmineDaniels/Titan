@@ -4,6 +4,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Portfolio from "./components/Portfolio";
 import portfolios from "./utils/portfolios"
+import Skills from "./components/Skills";
 
 
 export default function PortfolioContainer(){
@@ -12,6 +13,9 @@ export default function PortfolioContainer(){
     const renderPage = () => {
         if (currentPage === 'About'){
             return <About/>
+        }
+        if (currentPage === 'Skills'){
+            return <Skills/>
         }
         if (currentPage === 'Contact'){
             return <Contact/>

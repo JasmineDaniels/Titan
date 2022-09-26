@@ -1,0 +1,23 @@
+.tech-image{
+    position: relative;
+    height: 150px;
+    width: 150px;
+}
+
+.tech-image-lg{
+    position: relative;
+    height: 200px;
+    width: 200px;
+}
+
+.tech-image .tech-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.tech-fit{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}

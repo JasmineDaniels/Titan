@@ -59,8 +59,9 @@ export default function Contact(){
             console.log(email)
             console.log(phone)
             console.log(message)
-            //send form node mailer or form submit
-            await axios.post('http://localhost:3001/api/contact', {
+            
+            //send form node mailer
+            await axios.post('/api/contact', {
                 name: name, 
                 email: email, 
                 phone: phone,

@@ -17,7 +17,9 @@ export default function Nav ({ currentPage, handlePageChange }){
                         </li>
 
                         <li className="nav-item mx-3">
-                            <a className="nav-link" href="/">Skills</a>
+                            <a className={currentPage === 'Skills' ? "nav-link active" : "nav-link"} 
+                            href="#Skills"
+                            onClick={() => handlePageChange('Skills')}>Skills</a>
                         </li>
 
                         <li className="nav-item mx-3">

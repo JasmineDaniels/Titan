@@ -1,29 +1,29 @@
 import avatar from '../images/avatar.png'
-import axios from "axios"
-import FileDownload from 'js-file-download'
+//import axios from "axios"
+//import FileDownload from 'js-file-download'
 import Resume from '../Resume.pdf'
 export default function About(){
     const style = {
         height: "300px"
     }
 
-    const download = async (e) => {
-        e.preventDefault()
+    // const download = async (e) => {
+    //     e.preventDefault()
 
-        await axios({
-            url: 'http://localhost:3001/',
-            method: 'GET',
-            responseType: 'blob'
-        }).then((res) => {
-            console.log(res)
-            FileDownload(res.data, 'JDanielsResume.png')
-        })
+    //     await axios({
+    //         url: 'http://localhost:3001/',
+    //         method: 'GET',
+    //         responseType: 'blob'
+    //     }).then((res) => {
+    //         console.log(res)
+    //         FileDownload(res.data, 'JDanielsResume.png')
+    //     })
 
-        // await axios({
-        //     url: 'https://www.canva.com/design/DAFJ-M8DVn8/QKvh9Z7KrXONDh94GjkJuw/view?utm_content=DAFJ-M8DVn8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton',
-        //     method: 'POST',
-        // })
-    }
+    //     // await axios({
+    //     //     url: 'https://www.canva.com/design/DAFJ-M8DVn8/QKvh9Z7KrXONDh94GjkJuw/view?utm_content=DAFJ-M8DVn8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton',
+    //     //     method: 'POST',
+    //     // })
+    // }
 
     return (
         <section className="container mt-5" id="About">

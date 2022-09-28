@@ -1,4 +1,5 @@
-import nodemailer from 'nodemailer'
+//import nodemailer from 'nodemailer'
+const nodemailer = require('nodemailer')
 //import dotenv from "dotenv"
 const Send = (options) => {
     let transporter = nodemailer.createTransport({
@@ -20,7 +21,7 @@ const Send = (options) => {
 }
 
 
-export default function Email ({name, phone, email, message}){
+function Email ({name, phone, email, message}){
     const styles = {
         fontColor: `hotpink`
     }
@@ -45,3 +46,5 @@ export default function Email ({name, phone, email, message}){
 
     Send(options)
 }
+
+module.exports = Email;

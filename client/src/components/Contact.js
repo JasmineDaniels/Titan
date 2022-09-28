@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import '../css/contact.css'
-import { validateEmail } from '../utils/helpers'
+import { validateEmail } from '../utils/helpers.js'
 import axios from 'axios'
-
+// import Modal from "./Modal"
 import gmail from '../images/gmlogo.png'
 import gh from '../images/GH1.png'
 import linkedIn from '../images/linkedin1.png'
@@ -12,7 +12,7 @@ export default function Contact(){
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
-    // const [submitted, setSubmitted] = useState(false)
+    // const [submitted, setSubmit] = useState(false)
     // const [errorMessage, setErrorMessage] = useState('');
 
     const handleInputChange = (e) => {
@@ -54,11 +54,6 @@ export default function Contact(){
                 alert('Please enter a valid Email')
                 return;
             } 
-    
-            console.log(name)
-            console.log(email)
-            console.log(phone)
-            console.log(message)
             
             //send form node mailer
             await axios.post('/api/contact', {
@@ -66,16 +61,19 @@ export default function Contact(){
                 email: email, 
                 phone: phone,
                 message: message
-            })
-            //if successul submitted === true then renderModal
-            // setName('')
-            // setPhone('')
-            // setEmail('')
-            // setMessage('')
+            })  
         } catch (error) {
-            console.log(error)
+
+            if(error.code !== 'ERR_BAD_REQUEST'){
+                throw error;
+            } 
+            setName('')
+            setPhone('')
+            setEmail('')
+            setMessage('')
+            // setSubmit(true)
+            // renderModal()
         }
-        
     }
 
 

@@ -3,7 +3,7 @@ import Nav from "./Nav";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Portfolio from "./components/Portfolio";
-import portfolios from "./utils/portfolios"
+import portfolios from "./utils/portfolios.js"
 import Skills from "./components/Skills";
 
 
@@ -31,7 +31,7 @@ export default function PortfolioContainer(){
         <div>
             <Nav currentPage={currentPage} handlePageChange={handlePageChange}/>
             {renderPage()}
-            {/* <Contact/> */}
+            
         </div>
     )
 }

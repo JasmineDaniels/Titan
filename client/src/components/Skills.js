@@ -21,69 +21,69 @@ export default function Skills(){
                 <h2>SKILLS</h2>
             </div>
             
-            <div className="row row-cols-4 mb-3">
-                <div className="col">
+            <div className="row ">
+                <div className="col-md-3 mb-3">
                     <div className="tech-image">
                         <img src={html} alt="html-logo" className="tech-img"></img>
                     </div>
                 </div>
-                <div className="col">
+                <div className="col-md-3 mb-3">
                     <div className="tech-image">
                         <img src={css} alt="css-logo" className="tech-fit"></img>
                     </div>
                 </div>
-                <div className="col">
+                <div className="col-md-3 mb-3">
                     <div className="tech-image">
                         <img src={js} alt="js-logo" className="tech-img"></img>
                     </div>
                 </div>
-                <div className="col">
+                <div className="col-md-3 mb-3">
                     <div className="tech-image">
                         <img src={boot} alt="bs-logo" className="tech-img"></img>
                     </div>
                 </div>
             </div>
 
-            <div className="row row-cols-4">
-                <div className="col">
+            <div className="row ">
+                <div className="col-md-3 mb-3">
                     <div className="tech-image-lg">
                         <img src={node} alt="node-logo" className="tech-fit"></img>
                     </div>
                 </div>
-                <div className="col">
+                <div className="col-md-3 mb-3">
                     <div className="tech-image-lg">
                         <img src={sequel} alt="sequel-logo" className="tech-fit"></img>
                     </div>
                 </div>
-                <div className="col">
+                <div className="col-md-3 mb-3">
                     <div className="tech-image">
                         <img src={docker} alt="docker-logo" className="tech-img"></img>
                     </div>
                 </div>
-                <div className="col">
+                <div className="col-md-3 mb-3">
                     <div className="tech-image-lg">
                         <img src={react} alt="react-logo" className="tech-fit"></img>
                     </div>
                 </div>
             </div>
 
-            <div className="row row-cols-4">
-                <div className="col">
+            <div className="row ">
+                <div className="col-md-3 mb-3">
                     <div className="tech-image-lg">
                         <img src={mongo} alt="mongo-logo" className="tech-fit"></img>
                     </div>
                 </div>
-                <div className="col">
+                <div className="col-md-3 mb-3">
                     <div className="tech-image-lg">
                         <img src={express} alt="express-logo" className="tech-fit"></img>
                     </div>
                 </div>
-                <div className="col">
+                <div className="col-md-3 mb-3">
                     <div className="tech-image-lg">
                         <img src={sql} alt="sql-logo" className="tech-fit"></img>
                     </div>
                 </div>
-                <div className="col">
+                <div className="col-md-3 mb-3">
                     <div className="tech-image">
                         <img src={jquery} alt="jquery-logo" className="tech-fit"></img>
                     </div>

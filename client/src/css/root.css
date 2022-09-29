@@ -1,0 +1,13 @@
+html {
+    height: 100% !important
+}
+
+body {
+    min-height: 100% !important;
+    display: flex;
+    flex-direction: column;
+}
+
+#root {
+    padding-bottom: 60px;
+}

@@ -1,4 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Portfolio from "./components/Portfolio";
@@ -9,6 +11,26 @@ import MainNavigation from "./components/MainNavigation";
 
 
 export default function PortfolioContainer(){
+    const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+
+        const getProjects = async () => {
+            try {
+                const response = await axios.get(`https://api.github.com/users/JasmineDaniels/repos?&sort=created`);
+                const data = await response.data;
+                //console.log(data);
+                setProjects(data);
+            } catch (error) {
+                console.error(error)
+                //setErrMsg(error)
+            }
+
+        }
+
+        getProjects()
+
+    }, [])
 
     return(
         <div>

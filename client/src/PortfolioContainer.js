@@ -1,6 +1,4 @@
-//import React, { useState } from "react";
 import { Routes, Route } from 'react-router-dom';
-//import Nav from "./Nav";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Portfolio from "./components/Portfolio";
@@ -11,24 +9,6 @@ import MainNavigation from "./components/MainNavigation";
 
 
 export default function PortfolioContainer(){
-    // const [currentPage, setCurrentPage] = useState('About')
-
-    // const renderPage = () => {
-    //     if (currentPage === 'About'){
-    //         return <About/>
-    //     }
-    //     if (currentPage === 'Skills'){
-    //         return <Skills/>
-    //     }
-    //     if (currentPage === 'Contact'){
-    //         return <Contact/>
-    //     }
-    //     if (currentPage === 'Projects'){
-    //         return <Portfolio portfolios={portfolios}/>
-    //     }
-    // }
-
-    // const handlePageChange = (page) => setCurrentPage(page)
 
     return(
         <div>
@@ -41,8 +21,6 @@ export default function PortfolioContainer(){
                     <Route path="/contact" element={<Contact/>}/>
                 </Routes>
             </main>
-            {/* <Nav currentPage={currentPage} handlePageChange={handlePageChange}/>
-            {renderPage()} */}
             <Footer/>
         </div>
     )

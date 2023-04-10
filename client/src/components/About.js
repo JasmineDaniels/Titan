@@ -31,7 +31,6 @@ export default function About() {
         }
 
         getProfile()
-        // eslint-disable-next-line
     }, [])
 
     return (

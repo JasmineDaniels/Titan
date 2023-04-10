@@ -19,8 +19,9 @@ export default function PortfolioContainer(){
             try {
                 const response = await axios.get(`https://api.github.com/users/JasmineDaniels/repos?&sort=created`);
                 const data = await response.data;
-                //console.log(data);
-                setProjects(data);
+                console.log(data);
+                const activeProjects = data.filter((d) => d.description != null);
+                setProjects(activeProjects);
             } catch (error) {
                 console.error(error)
                 //setErrMsg(error)
@@ -29,7 +30,7 @@ export default function PortfolioContainer(){
         }
 
         getProjects()
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return(
@@ -39,7 +40,7 @@ export default function PortfolioContainer(){
                 <Routes>
                     <Route path="/" element={<About/>}/>
                     <Route path="/skills" element={<Skills/>}/>
-                    <Route path="/projects" element={<Portfolio portfolios={portfolios}/>}/>
+                    <Route path="/projects" element={<Portfolio portfolios={portfolios} projects={projects}/>}/>
                     <Route path="/contact" element={<Contact/>}/>
                 </Routes>
             </main>

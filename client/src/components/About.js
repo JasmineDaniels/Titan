@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import '../css/about.css'
 //import avatar from '../images/avatar.png'
 import Resume from '../Resume.pdf'
 import axios from 'axios';
@@ -7,11 +8,6 @@ export default function About() {
     const [profile] = useState("JasmineDaniels")
     const [bio, setBio] = useState('')
     const [avatarURL, setAvatarURL] = useState('')
-
-    const style = {
-        height: "300px",
-        // maxWidth: 100%
-    }
 
     useEffect(() => {
 
@@ -31,6 +27,7 @@ export default function About() {
         }
 
         getProfile()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
@@ -40,7 +37,7 @@ export default function About() {
                     <h2>ABOUT Jasmine</h2>
                     <p>
 
-                        An innovation {bio} with experience in building full stack web applications
+                        An innovative {bio} with experience in building full stack web applications
                         with user friendly front-end designs that compliment new or existing database
                         structures and maintenance protocols.
                         <br/>
@@ -69,21 +66,25 @@ export default function About() {
 
                     </p>
 
-                    <div>
+                    <div className='text-center'>
 
                         <a
                             href={Resume}
                             type="button"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="btn btn-primary mx-2"> View Resume
+                            className="btn btn-primary"> View Resume
                         </a>
 
                     </div>
                 </div>
                 <div className="col-md-4 ">
                     <div>
-                        <img src={avatarURL} alt="" style={style} className="float-start"></img>
+                        <img 
+                        src={avatarURL} 
+                        alt="github avatar" 
+                        className='avi'
+                        ></img>
                     </div>
                 </div>
             </div>

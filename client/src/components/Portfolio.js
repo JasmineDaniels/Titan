@@ -1,6 +1,8 @@
 import '../css/portfolio.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCodeBranch } from "@fortawesome/free-solid-svg-icons"
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -11,10 +13,10 @@ import Col from 'react-bootstrap/Col';
 
 export default function Portfolio({ portfolios, projects }) {
 
-    console.log(portfolios)
     return (
         <Container>
 
+            <h3 className='mt-3'>Featured Projects</h3>
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={50}
@@ -24,79 +26,93 @@ export default function Portfolio({ portfolios, projects }) {
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
             >
-                {portfolios.map((port, index) => (
-                    <Col md='4' key={index} className="card my-3 mx-auto">
-                        <SwiperSlide className='mb-4'>
-                        <div className='project-image mx-auto p-2'>
-                            <img 
-                            src={port.img}
-                            className="card-img-top project-img " 
-                            alt="project"/>
-                        </div>
-                        <div className="card-body mx-3" >
-                            <h5 className="card-title">{`${port.title}`}</h5>
-                            <p className="card-text">{`${port.description}`}</p>
-                            {port.site ? (
-                                <div className='text-center'>
-                                <div>
-                                    <a
-                                        href={port.site} 
-                                        className="card-link"
-                                        target="_blank"
-                                        rel="noopener noreferrer">View Site
-                                    </a>
-                                </div>
-                                <div>
-                                    <a
-                                        href={port.repo}
-                                        className="card-link"
-                                        target="_blank"
-                                        rel="noopener noreferrer">View Repository
-                                    </a>
-                                </div>
-                                </div>
-                            ) : (
-                                <div className='text-center'>
-                                    <a
-                                        href={port.repo}
-                                        className="card-link"
-                                        target="_blank"
-                                        rel="noopener noreferrer">View Repository</a>
-                                </div>
+                {portfolios.map((port, idx) => (
+                    <Col md='4' key={idx} className="card mx-auto">
+                        <SwiperSlide className='mb-5'>
+                            <div className='project-image mx-auto p-2'>
+                                <img
+                                    src={port.img}
+                                    className="card-img-top project-img "
+                                    alt="project" />
+                            </div>
+                            <div className="card-body mx-3" >
+                                <h5 className="card-title text-center">{`${port.title}`}</h5>
+                                <p className="card-text">{`${port.description}`}</p>
+                                {port.site ? (
+                                    <div className='text-center'>
+                                        <div>
+                                            <a
+                                                href={port.site}
+                                                className="card-link"
+                                                target="_blank"
+                                                rel="noopener noreferrer">View Site
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a
+                                                href={port.repo}
+                                                className="card-link"
+                                                target="_blank"
+                                                rel="noopener noreferrer">View Repository
+                                            </a>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className='text-center'>
+                                        <a
+                                            href={port.repo}
+                                            className="card-link"
+                                            target="_blank"
+                                            rel="noopener noreferrer">View Repository</a>
+                                    </div>
 
-                            )}
-                        </div>
+                                )}
+                            </div>
                         </SwiperSlide>
                     </Col>
                 ))}
             </Swiper>
 
             <Row className="my-5 " id="Projects">
-                {projects.map((port, index) => (
+                {projects.map((p, index) => (
                     <Col md='4' key={index} className="card my-3 mx-auto">
-                
-                        <div className="card-body mx-3" >
-                            <h5 className="card-title text-center">{`${port.name}`}</h5>
-                            <p className="card-text">{`${port.description}`}</p>
-                            {port.homepage ? (
-                                <div>
-                                    <a
-                                        href={port.homepage}
-                                        className="card-link"
-                                        target="_blank"
-                                        rel="noopener noreferrer">View Site</a>
 
-                                    <a
-                                        href={`https://github.com/JasmineDaniels/${port.name}`}
-                                        className="card-link"
-                                        target="_blank"
-                                        rel="noopener noreferrer">View Repository
-                                    </a>
+                        <div className="card-body mx-3" >
+                            <a
+                            className='nav-link'
+                            href={`https://github.com/JasmineDaniels/${p.name}`}>
+                            <h5 className="card-title text-center">{`${p.name}`}
+                            <FontAwesomeIcon className='mx-2' icon={faCodeBranch} /> 
+                            </h5>
+                              
+                            </a>                                             
+                            <p className="card-text">{`${p.description}`}</p>
+                            {p.homepage ? (
+                                <div className='text-center'>
+                                    <div>
+                                        <a
+                                            href={p.homepage}
+                                            className="card-link"
+                                            target="_blank"
+                                            rel="noopener noreferrer">View Site
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a
+                                            href={`https://github.com/JasmineDaniels/${p.name}`}
+                                            className="card-link"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            >
+                                            View Repository
+                                        </a>
+                                    </div>
                                 </div>
+
                             ) : (
-                                <div>
+                                <div className='text-center'>
                                     <a
-                                        href={`https://github.com/JasmineDaniels/${port.name}`}
+                                        href={`https://github.com/JasmineDaniels/${p.name}`}
                                         className="card-link"
                                         target="_blank"
                                         rel="noopener noreferrer">View Repository</a>

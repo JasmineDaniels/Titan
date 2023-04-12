@@ -13,3 +13,21 @@
     width: 100%;
     object-fit: contain;
 }
+
+@media screen and (min-width: 400px) {
+    .swiper-container {
+      width: 390px;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .swiper-container {
+      width: 390px;
+    }
+}
+  
+@media screen and (min-width: 768px) {
+    .swiper-container {
+      width: 768px;
+    }
+}

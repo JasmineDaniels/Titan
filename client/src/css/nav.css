@@ -1,0 +1,25 @@
+.create {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+.name{
+    font-size: 1.5rem;
+    color: var(--HOTPINK);
+}
+
+.navbar {
+    background-color: rgb(23, 22, 22) !important;
+}
+
+.main-link{
+    font-weight: 600 !important;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--HOTPINK) !important;
+    margin-left: 3rem;
+}
+
+.navbar-nav{
+    margin-left: 7rem;
+}

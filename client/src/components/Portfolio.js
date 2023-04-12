@@ -1,12 +1,13 @@
 import '../css/portfolio.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCodeBranch } from "@fortawesome/free-solid-svg-icons"
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -18,17 +19,35 @@ export default function Portfolio({ portfolios, projects }) {
 
             <h3 className='mt-3'>Featured Projects</h3>
             <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y]}
+                modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                breakpoints={{
+                    400: {
+                        width: 390,
+                        slidesPerView: 1,
+                    },
+                    // when window width is >= 640px
+                    640: {
+                      width: 640,
+                      slidesPerView: 1,
+                    },
+                    // when window width is >= 768px
+                    768: {
+                      width: 768,
+                      slidesPerView: 2,
+                    },
+                    
+                }}
                 spaceBetween={50}
-                slidesPerView={3}
+                // slidesPerView={3}
+                autoplay={true}
                 navigation
-                pagination={{ clickable: true }}
+                pagination={{ clickable: true}}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
             >
                 {portfolios.map((port, idx) => (
                     <Col md='4' key={idx} className="card mx-auto">
-                        <SwiperSlide className='mb-5'>
+                        <SwiperSlide className='swiper-container mb-5'>
                             <div className='project-image mx-auto p-2'>
                                 <img
                                     src={port.img}

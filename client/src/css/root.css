@@ -1,3 +1,7 @@
+:root{
+    --HOTPINK: rgb(240, 67, 153);
+}
+
 html {
     height: 100% !important
 }
@@ -9,5 +13,13 @@ body {
 }
 
 #root {
-    padding-bottom: 60px;
+    padding-bottom: 160px;
+}
+
+.btn-primary, 
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active{
+    background-color: var(--HOTPINK) !important;
+    border-color: var(--HOTPINK) !important;
 }

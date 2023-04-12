@@ -1,0 +1,51 @@
+.avi{
+    
+    /* margin-top: 20%;
+    max-height: 25rem;
+    margin-left: 8%; */
+
+    margin-left: 15%; 
+    margin-top: 35%;
+    max-height: 18.75rem;
+    border-radius: 50% !important;
+    /* border-radius: 50px 50px !important; */
+    display: grid;
+    place-items: center;
+}
+
+@media screen and (max-width:1000px){
+    .avi {
+        /* display: flex !important; */
+        margin-top: 15% !important;
+        margin-left: 28%;
+    }
+}
+
+@media screen and (max-width:768px){
+    .avi{
+        margin-top: 15% !important;
+        margin-left: 20%;
+    }
+}
+
+@media screen and (max-width:400px){
+    .avi{
+        margin-top: 15% !important;
+        margin-left: 8%;
+    }
+}
+
+@media screen and (min-width:1200px){
+    .typewriter .text {
+        display: flex;
+    }
+}
+
+.first-text{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-text{
+    font-weight: 500;
+}
+

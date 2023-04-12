@@ -1,37 +1,49 @@
-import React, { useState } from "react";
-import Nav from "./Nav";
+import { Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Portfolio from "./components/Portfolio";
 import portfolios from "./utils/portfolios.js"
 import Skills from "./components/Skills";
 import Footer from "./components/Footer";
+import MainNavigation from "./components/MainNavigation";
 
 
 export default function PortfolioContainer(){
-    const [currentPage, setCurrentPage] = useState('About')
+    const [projects, setProjects] = useState([]);
 
-    const renderPage = () => {
-        if (currentPage === 'About'){
-            return <About/>
-        }
-        if (currentPage === 'Skills'){
-            return <Skills/>
-        }
-        if (currentPage === 'Contact'){
-            return <Contact/>
-        }
-        if (currentPage === 'Projects'){
-            return <Portfolio portfolios={portfolios}/>
-        }
-    }
+    useEffect(() => {
 
-    const handlePageChange = (page) => setCurrentPage(page)
+        const getProjects = async () => {
+            try {
+                const response = await axios.get(`https://api.github.com/users/JasmineDaniels/repos?&sort=created`);
+                const data = await response.data;
+                console.log(data);
+                const activeProjects = data.filter((d) => d.description != null);
+                setProjects(activeProjects);
+            } catch (error) {
+                console.error(error)
+                //setErrMsg(error)
+            }
+
+        }
+
+        getProjects()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return(
         <div>
-            <Nav currentPage={currentPage} handlePageChange={handlePageChange}/>
-            {renderPage()}
+            <MainNavigation/>
+            <main>
+                <Routes>
+                    <Route path="/" element={<About/>}/>
+                    <Route path="/skills" element={<Skills/>}/>
+                    <Route path="/projects" element={<Portfolio portfolios={portfolios} projects={projects}/>}/>
+                    <Route path="/contact" element={<Contact/>}/>
+                </Routes>
+            </main>
             <Footer/>
         </div>
     )

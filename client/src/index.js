@@ -6,8 +6,13 @@ import './css/root.css'
 import "bootstrap/dist/css/bootstrap.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <App/>
+  <BrowserRouter>
+  <Routes>
+    <Route path="/*" element={<App/>}/>
+  </Routes>
+  </BrowserRouter>
 );

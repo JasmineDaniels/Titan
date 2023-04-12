@@ -98,7 +98,7 @@ export default function Portfolio({ portfolios, projects }) {
 
                         <div className="card-body mx-3" >
                             <a
-                            className='nav-link'
+                            className='nav-link project-link'
                             href={`https://github.com/JasmineDaniels/${p.name}`}>
                             <h5 className="card-title text-center">{`${p.name}`}
                             <FontAwesomeIcon className='mx-2' icon={faCodeBranch} /> 

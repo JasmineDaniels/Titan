@@ -69,16 +69,16 @@ export default function About() {
                     
 
                     <div>
-                        <p className='main-text'>
+                        <p className='head-text'>
                             An innovative {bio} with experience in building full stack web applications
-                            with user friendly front-end designs that compliment new or existing database
+                            with user friendly <br/> front-end designs that compliment new or existing database
                             structures and maintenance protocols.
                             <br />
                         </p>
 
-                        <p>
+                        <p className='main-text'>
                             Jasmine’s extensive technical skill-set in modern front end Javascript libraries
-                            such as React, and backend frameworks such as Spring Boot and Express has shown
+                            such as <span className='pink-text'>React and Redux</span>, and backend frameworks such as <span className='pink-text'>Spring Boot</span> and <span className='pink-text'>Express</span> has shown
                             her to be a self motivated learner and quick to pick up new technologies and
                             programming languages.
 
@@ -86,22 +86,22 @@ export default function About() {
                         <p className='main-text'>
                             She has made consistent investments to her professional education
                             by recently earning a certificate in flex full stack development
-                            from the Georgia Institute of Technology, as well her completion of
-                            the Cook Systems Java enterprise environment development program.
+                            from the <span className='pink-text'>Georgia Institute of Technology</span>, as well her completion of
+                            the <span className='pink-text'>Cook Systems</span> Java enterprise environment development program.
                             <br />
 
                         </p>
 
-                        <p>
+                        <p className='main-text'>
                             Here, she applied various aspects of the full stack software development
-                            lifecycle on agile teams and multiple real world projects,
-                            where her aim has been to make a positive direct impact on the end user
-                            experience and exceed stakeholder expectations.
+                            lifecycle on <span >agile teams</span> and multiple <span >real world projects</span>,
+                            where her aim has been to <span className='pink-text'>make a positive direct impact on the end user
+                            experience and exceed stakeholder expectations</span>.
                         </p>
 
-                        <p>
-                            Ten years of customer service background allow her to 
-                            leverage cross functional collaboration and the tracking of 
+                        <p className='main-text'>
+                            <span className='pink-text'>Ten years</span> of customer service background allow her to 
+                            leverage cross functional <span className='pink-text'>collaboration</span> and the tracking of 
                             corporate initiatives as well as end user satisfaction.
 
                         </p>

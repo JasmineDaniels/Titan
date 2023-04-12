@@ -16,8 +16,7 @@ export default function Portfolio({ portfolios, projects }) {
 
     return (
         <Container>
-
-            <h3 className='mt-3'>Featured Projects</h3>
+            <h3 className='mt-5 featured-projects'>Featured Projects</h3>
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                 breakpoints={{
@@ -93,6 +92,8 @@ export default function Portfolio({ portfolios, projects }) {
             </Swiper>
 
             <Row className="my-5 " id="Projects">
+                <h3 className='mt-5 featured-projects'>Recent Projects</h3>
+
                 {projects.map((p, index) => (
                     <Col md='4' key={index} className="card my-3 mx-auto">
 
